@@ -1,0 +1,37 @@
+2. Pendrive Anti-Forense com Ventoy + Kali
+
+Objetivo
+
+Utilizar o Ventoy para criar um pendrive com múltiplas ISOs (incluindo Kali), sem persistência e sem riscos de contaminação.
+
+Etapas
+
+    Baixe e instale o Ventoy no pendrive:
+    Bash
+
+sudo ./Ventoy2Disk.sh -i /dev/sdX
+
+Copie a ISO do Kali para o pendrive.
+
+Durante o boot, selecione: Live (amd64)
+
+(Opcional) Crie um arquivo ventoy.json com as seguintes personalizações:
+JSON
+
+    {
+      "control_legacy": [
+        { "VTOY_DEFAULT_MENU_MODE": "1" },
+        { "VTOY_TREE_VIEW_MENU_STYLE": "1" }
+      ]
+    }
+
+Vantagens
+
+    Imutabilidade: Nenhuma alteração após o reboot.
+
+    Flexibilidade: Suporte a múltiplas ISOs.
+
+    Desempenho: Leitura 100% na RAM.
+
+    Facilidade: Fácil atualização (basta substituir a ISO).
+
