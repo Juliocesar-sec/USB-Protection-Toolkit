@@ -1,15 +1,14 @@
-
 🛡️ Kali Forensics Station & USB Protection Toolkit
 
 Este repositório contém instruções e boas práticas para transformar um pendrive com Kali Linux em uma estação portátil de limpeza e análise forense segura, com foco em imutabilidade e proteção antiforense.
 
 📁 Índice
 
-    Estação de Limpeza Forense com Kali Linux
+    1. Estação de Limpeza Forense com Kali Linux
 
-    Pendrive Anti-Forense com Ventoy + Kali
+    2. Pendrive Anti-Forense com Ventoy + Kali
 
-    Proteção Física e Lógica do Pendrive
+    3. Proteção Física e Lógica do Pendrive
 
 1. Estação de Limpeza Forense com Kali Linux
 
@@ -160,11 +159,11 @@ case "$ACTION" in
     sudo hdparm -r1 "$DEVICE"
     ;;
   off)
-    echo "Desativando somente leitura em $DEVICE ..."
+    echo "Desativando somente leitura em "$DEVICE" ..."
     sudo hdparm -r0 "$DEVICE"
     ;;
   status)
-    echo "Status de somente leitura em $DEVICE:"
+    echo "Status de somente leitura em "$DEVICE":"
     sudo hdparm -r "$DEVICE"
     ;;
   *)
