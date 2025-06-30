@@ -1,66 +1,172 @@
-🛡️ Kali Forensics Station & USB Protection Toolkit
+Com certeza! Para renderizar o seu README em uma página HTML, você precisará de uma estrutura HTML básica e, dentro do <body>, o conteúdo do seu README. Como o HTML não interpreta Markdown diretamente, converti os elementos Markdown para seus equivalentes em HTML.
 
-Este repositório contém instruções e boas práticas para transformar um pendrive com Kali Linux em uma estação portátil de limpeza e análise forense segura, com foco em imutabilidade e proteção antiforense.
+Aqui está o código HTML completo:
+HTML
 
-📁 Índice
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kali Forensics Station & USB Protection Toolkit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        strong {
+            font-weight: bold;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre-wrap; /* Garante quebras de linha */
+            word-wrap: break-word; /* Garante quebras de palavra */
+        }
+        code {
+            background-color: #e0e0e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #664d03;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
 
-    1. Estação de Limpeza Forense com Kali Linux
+    <h1>&#128737; Kali Forensics Station &amp; USB Protection Toolkit</h1>
 
-    2. Pendrive Anti-Forense com Ventoy + Kali
+    <p>Este repositório contém instruções e boas práticas para transformar um pendrive com Kali Linux em uma <strong>estação portátil de limpeza e análise forense segura</strong>, com foco em <strong>imutabilidade e proteção antiforense</strong>.</p>
 
-    3. Proteção Física e Lógica do Pendrive
+    <hr>
 
-1. Estação de Limpeza Forense com Kali Linux
+    <h2>&#128193; Índice</h2>
 
-Objetivo
+    <ul>
+        <li><a href="#1-estação-de-limpeza-forense-com-kali-linux">1. Estação de Limpeza Forense com Kali Linux</a></li>
+        <li><a href="#2-pendrive-anti-forense-com-ventoy--kali">2. Pendrive Anti-Forense com Ventoy + Kali</a></li>
+        <li><a href="#3-proteção-física-e-lógica-do-pendrive">3. Proteção Física e Lógica do Pendrive</a></li>
+    </ul>
 
-Utilizar o Kali Live como um ambiente seguro e volátil para:
+    <hr>
 
-    Analisar dispositivos suspeitos (pendrives, SSDs, HDs)
+    <h2>1. Estação de Limpeza Forense com Kali Linux</h2>
 
-    Escanear por malware
+    <h3>Objetivo</h3>
 
-    Realizar limpeza segura de dados
+    <p>Utilizar o <strong>Kali Live</strong> como um ambiente seguro e volátil para:</p>
 
-    Conduzir investigações sem contaminar o sistema
+    <ul>
+        <li>Analisar dispositivos suspeitos (pendrives, SSDs, HDs)</li>
+        <li>Escanear por malware</li>
+        <li>Realizar limpeza segura de dados</li>
+        <li>Conduzir investigações sem contaminar o sistema</li>
+    </ul>
 
-Ferramentas Recomendadas
+    <h3>Ferramentas Recomendadas</h3>
 
-Tarefa
-	
+    <table>
+        <thead>
+            <tr>
+                <th>Tarefa</th>
+                <th>Ferramentas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Listar dispositivos</td>
+                <td><code>lsblk</code>, <code>fdisk</code>, <code>blkid</code></td>
+            </tr>
+            <tr>
+                <td>Escanear por malware</td>
+                <td><code>clamscan</code>, <code>rkhunter</code>, <code>chkrootkit</code></td>
+            </tr>
+            <tr>
+                <td>Identificar arquivos</td>
+                <td><code>file</code>, <code>strings</code>, <code>binwalk</code></td>
+            </tr>
+            <tr>
+                <td>Limpar discos com segurança</td>
+                <td><code>shred</code>, <code>dd</code>, <code>wipe</code></td>
+            </tr>
+            <tr>
+                <td>Montagem segura</td>
+                <td><code>mount -o ro</code>, <code>udisksctl</code></td>
+            </tr>
+        </tbody>
+    </table>
 
-Ferramentas
+    <h3>Práticas Recomendadas</h3>
 
-Listar dispositivos
-	
-
-lsblk, fdisk, blkid
-
-Escanear por malware
-	
-
-clamscan, rkhunter, chkrootkit
-
-Identificar arquivos
-	
-
-file, strings, binwalk
-
-Limpar discos com segurança
-	
-
-shred, dd, wipe
-
-Montagem segura
-	
-
-mount -o ro, udisksctl
-
-Práticas Recomendadas
-
-Bash
-
-# Montar mídia como somente leitura
+    <pre><code># Montar mídia como somente leitura
 sudo mount -o ro /dev/sdX1 /mnt/usb
 
 # Verificar tipo real dos arquivos
@@ -71,51 +177,50 @@ clamscan -r --infected /mnt/usb
 
 # Limpeza segura (3 passagens)
 shred -vzn 3 /dev/sdX
+</code></pre>
 
-2. Pendrive Anti-Forense com Ventoy + Kali
+    <hr>
 
-Objetivo
+    <h2>2. Pendrive Anti-Forense com Ventoy + Kali</h2>
 
-Utilizar o Ventoy para criar um pendrive com múltiplas ISOs (incluindo Kali), sem persistência e sem riscos de contaminação.
+    <h3>Objetivo</h3>
 
-Etapas
+    <p>Utilizar o <strong>Ventoy</strong> para criar um pendrive com múltiplas ISOs (incluindo Kali), sem persistência e sem riscos de contaminação.</p>
 
-    Baixe e instale o Ventoy no pendrive:
-    Bash
+    <h3>Etapas</h3>
 
-sudo ./Ventoy2Disk.sh -i /dev/sdX
+    <ol>
+        <li>Baixe e instale o <strong>Ventoy</strong> no pendrive:
+            <pre><code>sudo ./Ventoy2Disk.sh -i /dev/sdX</code></pre>
+        </li>
+        <li>Copie a ISO do Kali para o pendrive.</li>
+        <li>Durante o boot, selecione: <code>Live (amd64)</code></li>
+        <li>(Opcional) Crie um arquivo <code>ventoy.json</code> com as seguintes personalizações:
+            <pre><code>{
+  "control_legacy": [
+    { "VTOY_DEFAULT_MENU_MODE": "1" },
+    { "VTOY_TREE_VIEW_MENU_STYLE": "1" }
+  ]
+}</code></pre>
+        </li>
+    </ol>
 
-Copie a ISO do Kali para o pendrive.
+    <h3>Vantagens</h3>
 
-Durante o boot, selecione: Live (amd64)
+    <ul>
+        <li><strong>Imutabilidade:</strong> Nenhuma alteração após o reboot.</li>
+        <li><strong>Flexibilidade:</strong> Suporte a múltiplas ISOs.</li>
+        <li><strong>Desempenho:</strong> Leitura 100% na RAM.</li>
+        <li><strong>Facilidade:</strong> Fácil atualização (basta substituir a ISO).</li>
+    </ul>
 
-(Opcional) Crie um arquivo ventoy.json com as seguintes personalizações:
-JSON
+    <hr>
 
-    {
-      "control_legacy": [
-        { "VTOY_DEFAULT_MENU_MODE": "1" },
-        { "VTOY_TREE_VIEW_MENU_STYLE": "1" }
-      ]
-    }
+    <h2>3. Proteção Física e Lógica do Pendrive</h2>
 
-Vantagens
+    <h3>Proteção via <code>hdparm</code> (modo somente leitura por software)</h3>
 
-    Imutabilidade: Nenhuma alteração após o reboot.
-
-    Flexibilidade: Suporte a múltiplas ISOs.
-
-    Desempenho: Leitura 100% na RAM.
-
-    Facilidade: Fácil atualização (basta substituir a ISO).
-
-3. Proteção Física e Lógica do Pendrive
-
-Proteção via hdparm (modo somente leitura por software)
-
-Bash
-
-# Ativar somente leitura
+    <pre><code># Ativar somente leitura
 sudo hdparm -r1 /dev/sdX
 
 # Verificar status
@@ -123,19 +228,19 @@ sudo hdparm -r /dev/sdX
 
 # Desativar (volta a permitir escrita)
 sudo hdparm -r0 /dev/sdX
+</code></pre>
 
-⚠️ Importante: Essa função funciona em alguns dispositivos USB e a proteção é temporária (perde após o reboot).
+    <p class="warning">&#9888;&#65039; <strong>Importante:</strong> Essa função funciona em alguns dispositivos USB e a proteção é <strong>temporária</strong> (perde após o reboot).</p>
 
-Proteção Física (pendrives com chave de gravação)
+    <h3>Proteção Física (pendrives com chave de gravação)</h3>
 
-Use pendrives que possuam um interruptor de proteção contra gravação (exemplos: modelos antigos da Kingston, Transcend). Essa é a forma mais eficaz de evitar qualquer modificação acidental ou maliciosa.
+    <p>Use pendrives que possuam um <strong>interruptor de proteção contra gravação</strong> (exemplos: modelos antigos da Kingston, Transcend). Essa é a forma mais eficaz de evitar qualquer modificação acidental ou maliciosa.</p>
 
-Script para Controle do Modo Somente Leitura com hdparm
+    <h3>Script para Controle do Modo Somente Leitura com <code>hdparm</code></h3>
 
-Para facilitar o uso do hdparm para ativar, desativar e verificar o modo somente leitura, você pode utilizar este script:
-Bash
+    <p>Para facilitar o uso do <code>hdparm</code> para ativar, desativar e verificar o modo somente leitura, você pode utilizar este script:</p>
 
-#!/bin/bash
+    <pre><code>#!/bin/bash
 
 # Script para controlar o modo somente leitura via hdparm
 # Uso: ./hdparm-readonly.sh /dev/sdX on|off|status
@@ -171,14 +276,17 @@ case "$ACTION" in
     exit 1
     ;;
 esac
+</code></pre>
 
-Como usar:
+    <h4>Como usar:</h4>
 
-Bash
-
-chmod +x hdparm-readonly.sh
+    <pre><code>chmod +x hdparm-readonly.sh
 ./hdparm-readonly.sh /dev/sdX on     # Ativa somente leitura
-./hdparm-readonly.sh /dev/sdX off    # Desativa somente leitura
+./hdparm-readonly.dev/sdX off    # Desativa somente leitura
 ./hdparm-readonly.sh /dev/sdX status # Verifica status
+</code></pre>
 
-⚠️ Atenção: Lembre-se que essa proteção é temporária e pode não funcionar em todos os dispositivos USB.
+    <p class="warning">&#9888;&#65039; <strong>Atenção:</strong> Lembre-se que essa proteção é temporária e pode não funcionar em todos os dispositivos USB.</p>
+
+</body>
+</html>
