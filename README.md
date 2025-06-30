@@ -15,6 +15,7 @@ Este repositório contém instruções e boas práticas para transformar um pend
 ## ✅ 1. Estação de Limpeza Forense com Kali Linux
 
 ### Objetivo
+
 Utilizar o Kali Live como ambiente seguro e volátil para:
 
 - Análise de dispositivos suspeitos (pendrives, SSDs, HDs)  
@@ -46,25 +47,24 @@ clamscan -r --infected /mnt/usb
 
 # Limpeza segura (3 passagens)
 shred -vzn 3 /dev/sdX
-## 🔐 2. Pendrive Anti-Forense com Ventoy + Kali
 
-### Objetivo
-Utilizar o [Ventoy](https://www.ventoy.net) para criar um pendrive com múltiplas ISOs (incluindo Kali), **sem persistência e sem riscos de contaminação**.
+🔐 2. Pendrive Anti-Forense com Ventoy + Kali
+Objetivo
 
-### Etapas:
+Utilizar o Ventoy para criar um pendrive com múltiplas ISOs (incluindo Kali), sem persistência e sem riscos de contaminação.
+Etapas
 
-1. Baixe o Ventoy e instale no pendrive:
+    Baixe o Ventoy e instale no pendrive:
 
-   ```bash
-   sudo ./Ventoy2Disk.sh -i /dev/sdX
+sudo ./Ventoy2Disk.sh -i /dev/sdX
 
     Copie a ISO do Kali para o pendrive.
 
     Durante o boot, selecione:
 
-    Live (amd64)
+Live (amd64)
 
-    (Opcional) Crie um ventoy.json com personalizações:
+    (Opcional) Crie um arquivo ventoy.json com as seguintes personalizações:
 
 {
   "control_legacy": [
@@ -73,7 +73,7 @@ Utilizar o [Ventoy](https://www.ventoy.net) para criar um pendrive com múltipla
   ]
 }
 
-Vantagens:
+Vantagens
 
     Nenhuma alteração após reboot (imutável)
 
@@ -83,15 +83,9 @@ Vantagens:
 
     Fácil atualização (só substituir ISO)
 
+🛡️ 3. Proteção Física e Lógica do Pendrive
+Proteção via hdparm (somente leitura por software)
 
----
-
-```markdown
-## 🛡️ 3. Proteção Física e Lógica do Pendrive
-
-### Proteção via `hdparm` (somente leitura por software)
-
-```bash
 # Ativar somente leitura
 sudo hdparm -r1 /dev/sdX
 
@@ -109,9 +103,57 @@ Proteção física (pendrives com chave de gravação)
 
     Ideal para evitar qualquer modificação acidental ou maliciosa.
 
+Script para controle de modo somente leitura com hdparm
 
----
+Para facilitar o uso do hdparm para ativar, desativar e verificar o modo somente leitura, você pode usar este script simples:
 
-Se quiser, posso ajudar também a criar um script simples para ativar/desativar o modo somente leitura com `hdparm`. Quer?
+#!/bin/bash
 
+# Script para controlar o modo somente leitura via hdparm
+# Uso: ./hdparm-readonly.sh /dev/sdX on|off|status
 
+DEVICE="$1"
+ACTION="$2"
+
+if [[ -z "$DEVICE" || -z "$ACTION" ]]; then
+  echo "Uso: $0 /dev/sdX on|off|status"
+  exit 1
+fi
+
+if [[ ! -b "$DEVICE" ]]; then
+  echo "Erro: dispositivo $DEVICE não encontrado."
+  exit 1
+fi
+
+case "$ACTION" in
+  on)
+    echo "Ativando somente leitura em $DEVICE ..."
+    sudo hdparm -r1 "$DEVICE"
+    ;;
+  off)
+    echo "Desativando somente leitura em $DEVICE ..."
+    sudo hdparm -r0 "$DEVICE"
+    ;;
+  status)
+    echo "Status de somente leitura em $DEVICE:"
+    sudo hdparm -r "$DEVICE"
+    ;;
+  *)
+    echo "Ação inválida. Use on, off ou status."
+    exit 1
+    ;;
+esac
+
+Como usar:
+
+    Salve o script acima em um arquivo chamado hdparm-readonly.sh e dê permissão de execução:
+
+chmod +x hdparm-readonly.sh
+
+    Execute o script para ativar, desativar ou verificar o modo somente leitura no seu pendrive:
+
+./hdparm-readonly.sh /dev/sdX on     # Ativa somente leitura
+./hdparm-readonly.sh /dev/sdX off    # Desativa somente leitura
+./hdparm-readonly.sh /dev/sdX status # Verifica status
+
+    ⚠️ Lembre-se que essa proteção é temporária e pode não funcionar em todos os dispositivos USB.
