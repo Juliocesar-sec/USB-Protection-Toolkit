@@ -1,13 +1,4 @@
-Com certeza! Para renderizar o seu README em uma página HTML, você precisará de uma estrutura HTML básica e, dentro do <body>, o conteúdo do seu README. Como o HTML não interpreta Markdown diretamente, converti os elementos Markdown para seus equivalentes em HTML.
 
-Aqui está o código HTML completo:
-HTML
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kali Forensics Station & USB Protection Toolkit</title>
     <style>
         body {
