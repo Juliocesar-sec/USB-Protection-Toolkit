@@ -1,11 +1,4 @@
 
-Você está pedindo novamente a versão do README para copiar e colar, que é a versão em Markdown pronta para ser renderizada (como em plataformas como o GitHub).
-
-README para Copiar e Colar
-
-Aqui está o conteúdo completo do seu README.md, formatado em Markdown para que você possa simplesmente copiar e colar no seu arquivo:
-Markdown
-
 # 🛡️ Kali Forensics Station & USB Protection Toolkit
 
 Este repositório contém instruções e boas práticas para transformar um pendrive com Kali Linux em uma **estação portátil de limpeza e análise forense segura**, com foco em **imutabilidade e proteção antiforense**.
